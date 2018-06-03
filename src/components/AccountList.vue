@@ -1,6 +1,6 @@
 <template>
     <div id="accountlist">
-        <div v-for="value in object" :key = "value.id">{{ value }}</div>
+        <div v-for="item in items" :key = "item.id">{{ item.msg }}</div>
         <!-- <AccountListCell accounttype="accounttype"
                          account="account"
                          time="time"
@@ -13,12 +13,11 @@
   import AccountListCell from './AccountListCell.vue'
   export default {
     name: 'AccountList',
-    data: {
-        object: {
-            a: 'a',
-            b: 'b',
-            c: 'c'
-        }
+    data() {
+        return {items: [
+            {msg: '123'},
+            {msg: '321'}
+        ]}
     },
 
     props: {
